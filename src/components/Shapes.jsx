@@ -33,11 +33,12 @@ export function ThreeDee(props) {
 
       <Float
         speed={1} // Animation speed, defaults to 1
-        rotationIntensity={0.9} // XYZ rotation intensity, defaults to 1
+        rotationIntensity={0} // XYZ rotation intensity, defaults to 1
         floatIntensity={0.9} // Up/down float intensity, defaults to 1
       >
-        <ZombieMini position={[-5, -3, 0]}
-          rotation={[0, 2, -0.3]}
+        <ZombieMini
+         position={[-0, -0, 2]}
+          rotation={[0, 1, -0]}
         />
       </Float>
 
