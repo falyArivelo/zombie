@@ -37,7 +37,6 @@ const Login = () => {
       "userMail": event.target[0].value,
       "userPassword": event.target[1].value
     }
-    alert(JSON.stringify(formData))
     const request = await fetch(process.env.REACT_APP_LOGIN, {
       method: 'POST',
       headers: {
@@ -45,7 +44,6 @@ const Login = () => {
       },
       body: JSON.stringify(formData)
     });
-
     const response = await request.json();
     if (response.status === 200) {
       localStorage.setItem("token", response.data);
