@@ -34,7 +34,7 @@ const About = () => {
             <m.div className='image'>
               <m.img
                 key={index}
-                src={"./assets/images/" + image}
+                src={process.env.REACT_APP_REPOSITORY + "./assets/images/" + image}
                 alt={`Image ${index + 1}`}
                 initial="initial"
                 animate="animate"

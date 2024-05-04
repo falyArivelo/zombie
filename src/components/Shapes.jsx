@@ -37,10 +37,20 @@ export function ThreeDee(props) {
         floatIntensity={0.9} // Up/down float intensity, defaults to 1
       >
         <ZombieMini
-         position={[-0, -0, 2]}
+          position={[-0, -0, 2]}
           rotation={[0, 1, -0]}
         />
       </Float>
+      <Clouds material={THREE.MeshBasicMaterial}>
+        <Cloud
+          opacity={0.1}
+          speed={0.1} // Rotation speed
+          width={20} // Width of the full cloud
+          depth={1.5} // Z-dir depth
+          segments={20}
+         seed={10} bounds={50} volume={80} position={[0, 0, 0]} color={"white"} />
+      </Clouds>
+
 
     </Canvas >
   );
