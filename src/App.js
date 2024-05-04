@@ -4,6 +4,8 @@ import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact';
 import Chat from './components/Chat';
+import Forum from './components/Forum';
+
 
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './styles/page_transition.css'
@@ -50,16 +52,19 @@ function App() {
           <Cursor />
           <Navbar />
           {/* {!location.pathname.startsWith('/auth') && <Navbar />} */}
-          <AnimatePresence  mode='wait'>
+          <AnimatePresence mode='wait'>
             <Routes location={location} key={location.pathname}>
               <Route index element={<Home />} className='page' />
               <Route path="/about" element={<About />} className='page' />
               <Route path="/home" element={<Home />} className='page' />
               <Route path="/contact" element={<Contact />} className='page' />
               <Route path="/chat" element={<Chat />} className='page' />
+              <Route path="/forum" element={<Forum />} className='page' />
+
               <Route path="/auth" element={<Login />} className='page' />
               <Route path="/auth/login" element={<Login />} className='page' />
               <Route path="/auth/signup" element={<Signup />} className='page' />
+
 
             </Routes>
           </AnimatePresence>

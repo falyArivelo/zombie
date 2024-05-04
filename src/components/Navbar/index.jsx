@@ -95,7 +95,7 @@ const Navbar = () => {
         <div className="nav-items">
           <Link className='nav-link hoverable' to='/home'>home</Link>
           <Link className='nav-link hoverable' to='/about'>about us</Link>
-          <Link className='nav-link hoverable' to='/home'>contact</Link>
+          <Link className='nav-link hoverable' to='/forum'>Forum</Link>
           <Link className='nav-link hoverable' to='/auth'>Sign in</Link>
 
         </div>
