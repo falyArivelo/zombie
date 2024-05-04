@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     // background-color: red;
     position: relative;
-    background-color: rgb(216, 197, 205);
+    background-color: $dark-bg-color;
 
     .image {
         position: absolute;
@@ -44,7 +44,7 @@
         overflow: hidden;
         @include flex-center-center;
         z-index: 1000;
-        // font-family: 'wanoquin';
+        font-family: 'Population Zero BB', sans-serif;
 
         span {
             transform: rotate(-3deg);
@@ -54,7 +54,7 @@
     .slogan {
         width: 100%;
         padding: 20px 20px;
-        font-size: 200px;
+        font-size: 220px;
         color: black;
         line-height: 0.9;
         position: absolute;
@@ -65,6 +65,7 @@
         display: flex;
         flex-direction: column;
         gap: 5rem;
+        color: $dark-font-color ;
 
 
 
@@ -75,6 +76,8 @@
             overflow: hidden;
             @include flex-center-center;
             // line-height: 1;
+            font-family: 'Population Zero BB', sans-serif;
+            color: $dark-font-color ;
         }
 
         .match {
@@ -84,6 +87,7 @@
             overflow: hidden;
             @include flex-center-center;
             line-height: .8;
+            font-family: 'Population Zero BB', sans-serif;
         }
 
         span {
@@ -99,7 +103,15 @@
         position: absolute;
         bottom: 20px;
         left: 20px;
+        color: $dark-font-color;
         // @include border;
+
+    }
+
+    .scroll_animation svg path {
+        fill: #ff0000;
+        /* Remplacez #ff0000 par la couleur de votre choix */
+
     }
 
     .trust {
@@ -107,12 +119,13 @@
         display: flex;
         flex-wrap: wrap;
         font-size: 15px;
-        color: black;
+        color: $dark-font-color;
         line-height: 1;
         text-align: right;
         justify-content: right;
         align-items: right;
         font-weight: 500;
+        font-family: 'Poppins';
     }
 
     .hand {

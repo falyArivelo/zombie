@@ -6,7 +6,7 @@ const Index = () => {
         <div className='my-logo'>
             <Link to='/'>
                 <div className="logo">
-                    Oh my Boo !
+                    Zombix !
                 </div>
             </Link>
         </div>

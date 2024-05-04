@@ -29,10 +29,10 @@ const Index = () => {
       ease: 'power3.inOut'
     })
   }
-  useEffect(() => {
-    changeColor()
-    // changeFontSize()
-  })
+  // useEffect(() => {
+  //   changeColor()
+  //   // changeFontSize()
+  // })
 
 
   useGSAP(() => {

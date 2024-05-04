@@ -86,7 +86,7 @@ const Navbar = () => {
       <div className="part">
         <Link to='/'>
           <div className="logo">
-            Oh my Boo !
+            Zombix
           </div>
         </Link>
       </div>
@@ -109,7 +109,7 @@ const Navbar = () => {
           <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="" />
         </div>
         <div className="icon" onClick={toggleIcon}>
-          {isDarkMode ? <ImSun size={20} color='black' /> : <BiSolidMoon size={20} color='black' />}
+          {isDarkMode ? <ImSun size={20} color='black' /> : <BiSolidMoon size={20} color='white' />}
         </div>
 
         <div className="sidemenu_elements">
