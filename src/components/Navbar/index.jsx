@@ -113,14 +113,7 @@ const Navbar = () => {
           <Link className='nav-link hoverable' to='/about'>about us</Link>
           <Link className='nav-link hoverable' to='/forum'>Forum</Link>
 
-          {token ? (
-            <div>{username}</div>
-          ) : (
 
-            <Link className='nav-link hoverable' to='/auth'>
-              Sign in
-            </Link>
-          )}
 
 
         </div>
@@ -141,6 +134,15 @@ const Navbar = () => {
         </div>
 
         <div className="sidemenu_elements">
+
+          {token ? (
+            <div>{username}</div>
+          ) : (
+
+            <Link className='nav-link hoverable' to='/auth'>
+              Sign in
+            </Link>
+          )}
 
           <button onClick={toggleSideMenu} className='sidemenu_button'>
             <CgMenuRight size={27} />

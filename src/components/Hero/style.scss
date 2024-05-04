@@ -32,24 +32,6 @@
         }
     }
 
-    .perfect {
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        left: 50%;
-        color: white;
-        mix-blend-mode: dark;
-        transform: translate(-50%, -50%);
-        font-size: 130px;
-        overflow: hidden;
-        @include flex-center-center;
-        z-index: 1000;
-        font-family: 'Population Zero BB', sans-serif;
-
-        span {
-            transform: rotate(-3deg);
-        }
-    }
 
     .slogan {
         width: 100%;
@@ -67,6 +49,10 @@
         gap: 5rem;
         color: $dark-font-color ;
 
+        @include phone {
+            font-size: 110px;
+        }
+
 
 
         .find {
@@ -78,6 +64,12 @@
             // line-height: 1;
             font-family: 'Population Zero BB', sans-serif;
             color: $dark-font-color ;
+
+            @include phone {
+                word-spacing: 1rem;
+                text-align: center;
+            }
+
         }
 
         .match {
@@ -146,5 +138,27 @@
         left: 0;
         // background-color: rgba(125, 201, 27, 0.801);
         // transform: translateX(-100%);
+    }
+
+    .ask_vittou {
+        @include flex-center-center;
+        background-color: $dark-btn-bg;
+        color: $dark-btn-text;
+        width: 80px;
+        height: max-content;
+        padding: 50px 10px;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        white-space: nowrap;
+        transform-origin: 50% 50%;
+        position: absolute;
+        bottom: 50px;
+        right: 20px;
+        // border-radius: 50px;
+        font-family: 'Poppins';
+        font-weight: 900;
+        overflow: hidden;
+        clip-path: polygon(26% 12%, 75% 7%, 74% 94%, 25% 100%);
+
     }
 }

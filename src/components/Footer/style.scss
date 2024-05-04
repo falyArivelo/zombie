@@ -89,16 +89,19 @@
         @include flex-center-center;
         width: 100%;
         font-family: 'Disco Deck', sans-serif;
-        
         font-weight: bold;
         max-height: 100%;
         font-size: 260px;
         overflow: hidden;
         grid-row: 3;
-        color: black;
+        color: $black;
         /* Commence à la troisième ligne */
         grid-column: 1 / span 3;
         // background-color: red;
+
+        @include phone {
+            font-size: 90px;
+        }
 
     }
 

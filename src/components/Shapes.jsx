@@ -18,8 +18,8 @@ export function ThreeDee(props) {
 
       <Float
         speed={1} // Animation speed, defaults to 1
-        rotationIntensity={1} // XYZ rotation intensity, defaults to 1
-        floatIntensity={1} // Up/down float intensity, defaults to 1
+        rotationIntensity={1.3} // XYZ rotation intensity, defaults to 1
+        floatIntensity={1.5} // Up/down float intensity, defaults to 1
       >
         <Brain position={[0, 0, 0]} />
       </Float>
@@ -45,8 +45,14 @@ export function ThreeDee(props) {
           seed={10} bounds={50} volume={80} position={[0, 0, 0]} color={"white"} />
       </Clouds>
 
-      {/* <Book /> */}
-      <Pencil />
+
+      <Float
+        speed={1} // Animation speed, defaults to 1
+        rotationIntensity={1} // XYZ rotation intensity, defaults to 1
+        floatIntensity={1} // Up/down float intensity, defaults to 1
+      >
+        <Pencil />
+      </Float>
 
     </Canvas >
   );
