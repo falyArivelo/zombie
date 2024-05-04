@@ -70,7 +70,7 @@ function App() {
               <Route path="/auth" element={<Login />} className='page' />
               <Route path="/auth/login" element={<Login />} className='page' />
               <Route path="/auth/signup" element={<Signup />} className='page' />
-              <Route path="/lesson" element={<Lesson />} className='page' />
+              <Route path="/lesson/:chapterId" element={<Lesson />} className='page' />
 
 
               <Route path="/quizz" element={<Quiz type="20" />} className='page' />

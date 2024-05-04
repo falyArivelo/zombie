@@ -48,6 +48,7 @@ const Navbar = () => {
     // Vérifie si le token existe dans localStorage au chargement initial du composant
     const tokenFromLocalStorage = localStorage.getItem('token');
     const userDataString = localStorage.getItem('user');
+    console.log(userDataString);
     const userData = JSON.parse(userDataString);
 
     if (tokenFromLocalStorage) {
