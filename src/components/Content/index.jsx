@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
 import SplitType from 'split-type';
 import Tilt from 'react-parallax-tilt';
+import Pro from '../Pro';
 
 import { xy, clipPath_bottom_top_Trigger, clipPath_bottom_top, changeBG } from '../../motions/animation';
 const Index = () => {
@@ -68,23 +69,6 @@ const Index = () => {
                     </h1>
 
                 </div>
-
-                <div className="features">
-                    <div className="feature">
-                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
-                    </div>
-                    <div className="feature">
-                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
-                    </div>
-                    <div className="feature">
-                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
-                    </div>
-                    <div className="feature">
-                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
-                    </div>
-                </div>
-
-
             </div>
 
 

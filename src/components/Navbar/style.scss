@@ -10,6 +10,7 @@
     z-index: 1000;
     padding: 10px 0;
     color: $dark-font-color;
+    // background-color: black;
 
     .part {
         position: relative;
@@ -34,6 +35,24 @@
         height: 100%;
         @include flex-center-center;
         gap: 30px;
+
+        @include tablet {
+            display: none;
+        }
+
+        @include desktop {
+            display: flex;
+        }
+
+        @include phone {
+            display: none;
+        }
+
+
+
+
+
+
 
         .nav-link {
             color: $dark-font-color;
@@ -74,8 +93,8 @@
         font-size: 16px;
         width: max-content;
         text-decoration: none;
-
         text-transform: uppercase;
+        @include gradientText($blood, $citrouille)
     }
 
     .sidemenu_elements {
@@ -96,6 +115,10 @@
         color: white;
         mix-blend-mode: difference;
         z-index: 1;
+
+        @include desktop {
+            display: none;
+        }
 
     }
 
