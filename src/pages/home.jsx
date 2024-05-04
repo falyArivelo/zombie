@@ -8,6 +8,8 @@ import Earth from '../components/Earth';
 import Sphere from '../components/Sphere';
 import Hero from '../components/Hero';
 import Footer from '../components/Footer';
+import Pro from '../components/Pro';
+
 
 import HorizontalScroll from '../components/SCROLLTRIGGER/HorizontalScroll'
 import './style.scss'
@@ -41,6 +43,8 @@ const Home = () => {
     >
       <Hero />
       <Content />
+      <Pro />
+
       <Footer />
     </m.div>
 
