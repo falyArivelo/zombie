@@ -1,14 +1,33 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Platform from "../Platform";
 import "./style.scss";
 
-import { granim_image, charByCharNoTrigger } from "../../motions/animation";
+import { charByCharNoTrigger } from "../../motions/animation";
 import { useGSAP } from "@gsap/react";
 import { LuSend } from "react-icons/lu";
-import { BsSoundwave } from "react-icons/bs";
+import { FaRegUserCircle } from "react-icons/fa";
 import { CgOptions } from "react-icons/cg";
 const Index = () => {
   const chatRef = useRef(null);
+
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const [chatMessages, setChatMessages] = useState([
+    { type: "me", text: "who are team Vittoria?" },
+    { type: "bot", text: "cyber punk Women wearing a mask." },
+  ]);
+  const [inputText, setInputText] = useState("");
+
+  const togglePopover = () => {
+    setIsPopoverOpen(!isPopoverOpen);
+  };
+
+  const handleSend = (e) => {
+    e.preventDefault(); // Empêche le rechargement de la page
+    if (inputText.trim() !== "") {
+      setChatMessages([...chatMessages, { type: "me", text: inputText }]);
+      setInputText(""); // Réinitialise le champ de texte après l'envoi
+    }
+  };
 
   useGSAP(() => {
     charByCharNoTrigger(".bot_presentation");
@@ -22,62 +41,44 @@ const Index = () => {
         <div className="ask">
           <div className="bot_presentation">You can Ask Everything here</div>
           <div ref={chatRef} className="interation">
-            <div className="me">who are team Vittoria ?</div>
-            <div className="bot">
-              <div className="bot_avatar" />
-              <div>
-                team vittoria is a group of 4 students from ITuniversity ,
-                Layah, Faly, Valisoa, Fabien .
-              </div>
-            </div>
-
-            <div className="me">How are you today ?</div>
-            <div className="bot">
-              <div className="bot_avatar" />
-              I'm doing well, thank you for asking! How about you? Is there
-              anything I can assist you with today?
-            </div>
-
-            <div className="me">
-              <div className="bot_avatar" />
-              give me an image of an cat wearing a glasses and smoke !
-            </div>
-
-            <div className="bot">
-              <div className="bot_avatar" />
-              here is an image of an cat wearing a glasses and smoking
-              <div className="images">
-                <img src="/assets/images/Dreamers_00.jpg" alt="" />
-                <img src="/assets/images/Dreamers_01.jpg" alt="" />
-                <img src="/assets/images/Dreamers_02.jpg" alt="" />
-              </div>
-            </div>
-
-            <div className="me">
-              <div className="image">
-                <img src="/assets/images/Dreamers_00.jpg" alt="" />
-              </div>
-              Descriptions of this image please
-            </div>
-
-            <div className="bot">
-              <div className="bot_avatar" />
-              cyber punk Women wearing a mask .
-            </div>
+            {chatMessages.map((message, index) =>
+              message.type === "me" ? (
+                <div key={index} className="mymessage">
+                  <div className="me">{message.text}</div>
+                </div>
+              ) : (
+                <div className="bot" key={index}>
+                  <div className="user-container">
+                    <FaRegUserCircle size={20} color="white" />
+                    <p className="user">Utilisateur</p>
+                  </div>
+                  <p>{message.text}</p>
+                </div>
+              )
+            )}
           </div>
           <div className="input_question">
-            <input type="text" placeholder="Ask here" />
 
-            <button className="sound">
+            <button className="action" onClick={togglePopover}>
               <CgOptions size={25} color="black" />
             </button>
-            {/* <button className="picture">
-              <MdInsertPhoto size={23} color="black" />
-            </button> */}
-            <button className="send">
-              <LuSend size={25} color="black" />
-            </button>
-            {/* <button className="circle-button">Test</button> */}
+            {isPopoverOpen && (
+              <div className="popover-content">
+                <button className="popover-button">Wave</button>
+                <button className="popover-button">Dance</button>
+              </div>
+            )}
+            <form onSubmit={handleSend}>
+              <input
+                type="text"
+                placeholder="Ask here"
+                value={inputText}
+                onChange={(e) => setInputText(e.target.value)}
+              />
+              <button type="submit" className="send">
+                <LuSend size={25} color="black" />
+              </button>
+            </form>
           </div>
         </div>
       </div>

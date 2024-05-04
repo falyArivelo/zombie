@@ -47,7 +47,7 @@
         border: 2px solid rgb(39, 0, 44);
         border-radius: 10px;
         z-index: 1000;
-        overflow: hidden;
+        // overflow: hidden;
 
         input[type="text"] {
           position: absolute;
@@ -70,7 +70,7 @@
           }
         }
 
-        .sound,
+        .action,
         .picture {
         //   @include circle-button();
           background-color: rgb(211, 211, 211);
@@ -79,7 +79,7 @@
           mix-blend-mode: difference;
         }
 
-        .sound {
+        .action {
           top: 2px;
           left: 5px;
         }
@@ -100,6 +100,35 @@
           right: 10px;
           mix-blend-mode: difference;
         }
+        .send:hover,.action:hover {
+            background-color: rgb(157, 150, 150);
+        }
+// 3@118O9d
+        .popover-content {
+            position: absolute;
+            bottom: 100%;
+            left: 0%;
+            // transform: translateX(-50%);
+            background-color: rgb(22, 22, 22);
+            border-radius: 10%;
+            border: 1px solid black;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+
+            .popover-button {
+                background-color: transparent;
+                color: white;
+                border: none;
+                cursor: pointer;
+                margin-right: 10px; /* Add margin between buttons */
+              }
+
+              .popover-button:hover {
+                color: $green-1; /* Change color on hover */
+              }
+          }
+
       }
 
       .interation {
@@ -108,30 +137,32 @@
         gap: 0px;
         font-size: 17px;
         height: 65vh;
-        text-transform: capitalize;
         padding: 20px 0;
         margin-top: 20px;
         overflow-y: scroll;
 
+        .mymessage{
+            display: flex;
+            justify-content: flex-end;
+        }
 
         .me,.bot {
             padding: 15px 20px;
-            color: rgb(204, 204, 204);
             border-radius: 20px; /* Rond les coins pour un effet de bulle */
-            background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent pour l'effet de bulle */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Ombre pour un effet de bulle plus prononcé */
             margin-bottom: 10px; /* Ajoute un espace entre les messages */
             width: fit-content; /* Largeur adaptative au contenu */
             max-width: 100%; /* Assure que la largeur maximale ne dépasse pas la largeur de la fenêtre */
-            display: inline-block; /* Permet à l'élément de s'adapter à la largeur du texte */
+             /* Permet à l'élément de s'adapter à la largeur du texte */
+
         }
 
         .me {
           text-align: right;
-          // background-color: blue;
           padding: 15px 20px;
-          color: rgb(170, 170, 170);
-
+          color: rgb(204, 204, 204);
+          background-color: $violet-0;
+          width: fit-content;
           .image {
             width: 100%;
             height: 200px;
@@ -151,14 +182,15 @@
         }
 
         .bot {
-          display: flex;
-          flex-wrap: wrap;
+          display: inline-block;
+          // flex-wrap: wrap;
           width: 100%;
           text-align: left;
           padding: 15px 30px;
           // color: white;
           color: rgb(204, 204, 204);
-          position: relative;
+          background-color: rgba(255, 255, 255, 0.1); /* Fond semi-transparent pour l'effet de bulle */
+          // position: relative;
           .bot_avatar {
             position: absolute;
             top: calc(8px + 10px);
@@ -169,6 +201,17 @@
             background: linear-gradient(60deg, rgb(37, 13, 37), rgb(41, 7, 30));
           }
 
+          .user-container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 13%;
+            align-items: center;
+          }
+          .user{
+            font-size: small;
+            color: $green-0;
+          }
           .images {
             width: 100%;
             height: 200px;
