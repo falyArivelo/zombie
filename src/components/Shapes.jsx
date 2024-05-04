@@ -11,6 +11,10 @@ import GradientSphere from "./Mylamina";
 import * as THREE from 'three'
 import { Brain } from "./models/Brain";
 import { ZombieMini } from "./models/ZombieMini";
+import { Pencil } from "./models/Pencil";
+import { Book } from "./models/Book";
+import { CharacterAnimated } from "./models/CharacterAnimated";
+
 
 
 
@@ -47,9 +51,12 @@ export function ThreeDee(props) {
           width={20} // Width of the full cloud
           depth={1.5} // Z-dir depth
           segments={20}
-         seed={10} bounds={50} volume={80} position={[0, 0, 0]} color={"white"} />
+          seed={10} bounds={50} volume={80} position={[0, 0, 0]} color={"white"} />
       </Clouds>
 
+      <Book />
+      <Pencil />
+      <CharacterAnimated />
 
     </Canvas >
   );
