@@ -30,6 +30,32 @@ const Login = () => {
 
   }
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    console.log(event.target[1].value)
+    const formData = {
+      "userMail": event.target[0].value,
+      "userPassword": event.target[1].value
+    }
+    alert(JSON.stringify(formData))
+    const request = await fetch(process.env.REACT_APP_LOGIN, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const response = await request.json();
+    if (response.status === 200) {
+      localStorage.setItem("token", response.data);
+      window.location.replace("/")
+    } else {
+      alert(response.data)
+    }
+    console.log('response', response)
+  }
+
   return (
     <m.div className='auth'
       key={location.pathname}
@@ -65,9 +91,9 @@ const Login = () => {
           <span className='text'>happy to see you here again</span>
         </div>
 
-        <form className='login_form'>
-          <input type="text" placeholder='email' />
-          <input type="paswword" placeholder='password' />
+        <form className='login_form' onSubmit={handleSubmit}>
+          <input type="text" value="fabien@gmail.com" placeholder='email' />
+          <input type="paswword" value="fabien le magnifique" placeholder='password' />
 
           <button className='login-button' type='submit'>log in</button>
           <div className='forget-pwd'>Forget password ?</div>

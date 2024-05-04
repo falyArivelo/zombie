@@ -21,6 +21,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Login from './components/Authentification/login';
 import Signup from './components/Authentification/signup';
+import HandDetection from './components/GestureRecognition/HandDetection';
+import { Quiz } from './components/quizz/Quiz';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,7 +67,8 @@ function App() {
               <Route path="/auth/login" element={<Login />} className='page' />
               <Route path="/auth/signup" element={<Signup />} className='page' />
 
-
+              <Route path="/quizz" element={<Quiz type="20" />} className='page' />
+              
             </Routes>
           </AnimatePresence>
         </div>
