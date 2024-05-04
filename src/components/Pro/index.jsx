@@ -6,6 +6,7 @@ import { useGSAP } from '@gsap/react';
 import { Link } from 'react-router-dom';
 import Marquee from 'react-fast-marquee';
 import Tilt from 'react-parallax-tilt';
+import { FaCertificate } from "react-icons/fa6";
 
 const Index = () => {
 
@@ -24,7 +25,7 @@ const Index = () => {
                 trigger: ".hcontainer",
                 pin: true,
                 scrub: 1,
-                // snap: 1 / (divs.length - 1),
+                snap: 1 / (divs.length - 1),
                 end: "+=3500",
             },
             duration: 10
@@ -35,34 +36,7 @@ const Index = () => {
     return (
         <div className="hcontainer">
 
-            <div className="panel red">
-                <div className='title'>
-                    Tutoriels
-                </div>
 
-                <div className="tutoriels">
-                    <div className="tuto">
-                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
-
-                    </div>
-
-                    <div className="tuto">
-                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
-
-                    </div>
-
-                    <div className="tuto">
-                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
-
-                    </div>
-                </div>
-
-                <div className="more">
-                    <Link to='/tutoriels'>
-                        more
-                    </Link>
-                </div>
-            </div>
             <div className="panel orange">
 
 
@@ -90,9 +64,45 @@ const Index = () => {
             </div>
             <div className="panel purple">
                 <div className='certification'>
-                    GET YOUR CERTIFICATION
+                    <span> GET </span>
+                    <span> YOUR</span>
+                    <span> CERTIFICATION</span>
+                </div>
+
+                <div className="get">
+                    I want Pass it <span ><FaCertificate size={36} color='yellow' /></span>
                 </div>
             </div>
+
+            {/* <div className="panel red">
+                <div className='title'>
+                    Tutoriels
+                </div>
+
+                <div className="tutoriels">
+                    <div className="tuto">
+                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
+
+                    </div>
+
+                    <div className="tuto">
+                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
+
+                    </div>
+
+                    <div className="tuto">
+                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
+
+                    </div>
+                </div>
+
+                <div className="more">
+                    <Link to='/tutoriels'>
+                        more
+                    </Link>
+                </div>
+            </div> */}
+
             {/* <div className="panel green">
                 FOUR
             </div>

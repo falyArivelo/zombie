@@ -34,7 +34,6 @@ const Index = () => {
 
 
     const intl = useIntl();
-    console.log(JSON.stringify(import.meta.env))
     const { ref, inView } = useInView({
         triggerOnce: false, // Assure que l'animation ne se déclenche qu'une seule fois
     });
@@ -108,8 +107,8 @@ const Index = () => {
                 exit={{ opacity: 0, transition: { delay: .3 } }}
 
             >
-                <span>Trust us with your romantic destiny and let yourself </span>
-                <span>be enchanted by the magic of our process</span>
+                <span>Brain-starved? Nourish yourself with knowledge!</span>
+                <span>Embrace learning, dominate the world! bla bla ... </span>
             </m.div>
 
             <m.div className="threedee"
@@ -121,6 +120,10 @@ const Index = () => {
             >
                 <ThreeDee />
             </m.div>
+            <div className="ask_vittou">
+                ask VITTOU
+            </div>
+
 
         </div >
     )

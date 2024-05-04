@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.scss';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -6,8 +6,12 @@ import { ScrollTrigger } from 'gsap/all';
 import SplitType from 'split-type';
 import Tilt from 'react-parallax-tilt';
 import Pro from '../Pro';
+// import animation from '../../assets/hand-loading.json.json'
+import animation from '../../assets/books.json'
 
 import { xy, clipPath_bottom_top_Trigger, clipPath_bottom_top, changeBG } from '../../motions/animation';
+import Lottie from 'lottie-react';
+import { useInView } from 'react-intersection-observer';
 const Index = () => {
 
     useGSAP(() => {
@@ -16,9 +20,24 @@ const Index = () => {
 
     }, []);
 
+    const [isAnimated, setIsAnimated] = useState(false);
+    const { ref: booksref, inView: inViewBooks } = useInView({
+        triggerOnce: true, // Assure que l'observation ne se déclenche qu'une seule fois
+      });
+
+
+
     return (
         <div className="content">
             <div className="learning">
+                <div ref={booksref}   className="animation">
+                    {inViewBooks && (
+                        <Lottie animationData={animation}
+                            loop={false} // Assurez-vous que l'animation ne boucle pas
+                            autoplay={true } />
+                    )}
+                </div>
+
                 <div className="description">
                     <h1>
                         Let 's Learn !
@@ -32,10 +51,10 @@ const Index = () => {
                     </div>
                 </div>
 
-
+                {/* 
                 <div className="image1">
                     <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
-                </div>
+                </div> */}
 
             </div>
 

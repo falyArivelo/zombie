@@ -1,7 +1,3 @@
-// body {
-//     overscroll-behavior: none;
-//     height: 100vh;
-// }
 @import '../../global.scss';
 
 .hcontainer {
@@ -23,7 +19,7 @@
 .red {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to right,rgb(0, 103, 129),rgb(107, 0, 134)) ;
+    background: linear-gradient(to right, rgb(0, 103, 129), rgb(107, 0, 134));
 
 
     .title {
@@ -62,7 +58,7 @@
 }
 
 .orange {
-    background:linear-gradient(to bottom,orange,rgb(170, 111, 0));
+    background: linear-gradient(to bottom, orange, rgb(170, 111, 0));
     position: relative;
     display: flex;
     flex-direction: column;
@@ -117,12 +113,58 @@
 }
 
 .purple {
-    background: linear-gradient(to bottom,purple,rgb(155, 19, 155)) ;
+    background: linear-gradient(to bottom, purple, rgb(155, 19, 155));
     position: relative;
+    overflow: hidden;
 
     .certification {
-        font-size: 10rem;
+        font-size: 8rem;
+        font-weight: bold;
+        display: flex;
+        flex-wrap: wrap;
+        width: 90%;
+        // background: red;
+
+        @include phone {
+            // font-size: 60px;
+        }
+
         // @include absolute-centered;
+    }
+
+
+    .get {
+        @include flex-center-center;
+        gap: 20px;
+        justify-content: space-around;
+        background-color: $black;
+        color: $dark-btn-text;
+        width: max-content;
+        height: max-content;
+        padding: 30px 100px;
+        position: absolute;
+        bottom: 35%;
+        right: 20%;
+        font-family: 'Poppins';
+        font-weight: 900;
+        overflow: hidden;
+        border-radius: 50px;
+        transform: rotate(-45deg);
+        font-size: 35px;
+
+        @include phone {
+            padding: 15px 50px;
+            font-size: 30px;
+            bottom: 20%;
+            right: 5%;
+        }
+    }
+
+    .certifiate {
+        background-image: linear-gradient(to right, yellow, orange);
+        display: 'inline-block';
+        padding: '5px';
+        border-radius: '50%';
     }
 
 }
