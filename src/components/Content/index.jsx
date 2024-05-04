@@ -32,7 +32,7 @@ const Index = () => {
 
 
                 <div className="image1">
-                    <img src={process.env.REACT_APP_REPOSITORY+"/assets/images/zombie_2.jpg"} alt="" />
+                    <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
                 </div>
 
             </div>
@@ -47,11 +47,39 @@ const Index = () => {
                     </div>
                 </div>
 
-                
+
                 <div className="image1">
-                    <img src="/assets/images/zombie_1.jpg" alt="" />
+                    <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_1.jpg"} alt="" />
                 </div>
             </div>
+
+            <div className="pro learning">
+                <div className="pro_description">
+                    <h1>
+                        Allez plus loin !
+                    </h1>
+
+                </div>
+
+                <div className="features">
+                    <div className="feature">
+                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
+                    </div>
+                    <div className="feature">
+                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
+                    </div>
+                    <div className="feature">
+                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
+                    </div>
+                    <div className="feature">
+                        <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/zombie_2.jpg"} alt="" />
+                    </div>
+                </div>
+
+
+            </div>
+
+
 
         </div>
     )
