@@ -4,21 +4,22 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';
 import SplitType from 'split-type';
-import { xy, clipPath_bottom_top_Trigger, clipPath_bottom_top } from '../../motions/animation';
+import { xy, clipPath_bottom_top_Trigger, clipPath_bottom_top, changeBG } from '../../motions/animation';
 const Index = () => {
 
     useGSAP(() => {
 
-        xy(".matching .description", '.matching', -100, 0, 5)
+        // xy(".matching .description", '.matching', -100, 0, 5)
+        // changeBG(".matching", ".matching", 6)
         clipPath_bottom_top(".matching .image1", -30, 0, 1)
     }, []);
 
     return (
         <div className="content">
-            <div className="matching">
+            <div className="learning">
                 <div className="description">
                     <h1>
-                        Matching
+                        Let 's Learn !
                     </h1>
                     <div className="paragraphe">
                         Discover our sophisticated matchmaking
@@ -31,34 +32,25 @@ const Index = () => {
 
 
                 <div className="image1">
-                    <img src={process.env.REACT_APP_REPOSITORY+"/assets/images/matching_1.jpg"} alt="" />
+                    <img src={process.env.REACT_APP_REPOSITORY+"/assets/images/zombie_2.jpg"} alt="" />
                 </div>
 
-                <div className="image2">
-                    <img src={process.env.REACT_APP_REPOSITORY+"/assets/images/prom8pics.jpg"} alt="" />
-                </div>
             </div>
 
-            <div className="virtual">
-                <div className="virtual_description">
+            <div className="forum">
+                <div className="forum_description">
                     <h1>
-                        Virtual Date
+                        Forum
                     </h1>
                     <div className="paragraphe">
-                        Meet, communicate and bond
-                        authentic through personalized avatars,
-                        while exploring immersive visual experiences.
+                        Meet, communicate with another Zombies
                     </div>
                 </div>
 
-                {/* 
+                
                 <div className="image1">
-                    <img src="/assets/images/matching_1.jpg" alt="" />
+                    <img src="/assets/images/zombie_1.jpg" alt="" />
                 </div>
-
-                <div className="image2">
-                    <img src="/assets/images/prom8pics.jpg" alt="" />
-                </div> */}
             </div>
 
         </div>

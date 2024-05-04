@@ -2,37 +2,47 @@
 
 .content {
     width: 100vw;
-    padding: 1rem;
+    // padding: 1rem;
     position: relative;
-    background: #ecd7e8;
+    background: $dark-bg-color;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 
-    .matching {
-        margin-top: 50px;
+    .learning {
+        // margin-top: 50px;
         display: flex;
         width: 100%;
         height: 100vh;
         flex-direction: column;
         position: relative;
+        color: $dark-font-color;
+        font-family: 'Halloween Guises', sans-serif;
 
         .description {
             position: absolute;
+            width: 60%;
             top: 15%;
             left: 0;
+            padding-left: 20px;
 
             h1 {
 
-                font-size: 120px;
+                font-size: 90px;
                 text-transform: uppercase;
                 width: 100%;
+                @include gradientText($violet-0, $violet-1)
             }
 
             .paragraphe {
 
                 width: 650px;
-                color: black;
+                color: $dark-font-color;
                 display: flex;
                 flex-wrap: wrap;
                 font-size: 20px;
+                font-family: 'Poppins';
+
                 // @include border;
 
             }
@@ -43,6 +53,8 @@
             position: absolute;
             top: 30%;
             right: 50px;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .image2 {
@@ -53,7 +65,7 @@
         }
     }
 
-    .virtual {
+    .forum {
         margin-top: 20px;
         display: flex;
         width: 100%;
@@ -61,7 +73,8 @@
         flex-direction: column;
         position: relative;
 
-        .virtual_description {
+        .forum_description {
+            width: 60%;
             position: absolute;
             top: 5%;
             right: 20px;
@@ -71,18 +84,25 @@
                 font-size: 120px;
                 text-transform: uppercase;
                 width: 100%;
+                font-family: 'Halloween Guises', sans-serif;
+                @include gradientText($green-1, $green-0);
+                display: flex;
+                justify-content: right;
+                align-items: right;
             }
 
             .paragraphe {
 
                 width: 650px;
-                color: black;
-                display: flex;
-                justify-content: end;
-                align-items: right;
+                color: $dark-font-color;
                 flex-wrap: wrap;
                 font-size: 20px;
-
+                display: flex;
+                justify-content: right;
+                align-items: right;
+                font-family: 'Poppins';
+                padding: 20px 10px;
+                text-align: right;
             }
         }
 
@@ -90,7 +110,9 @@
             @include image(550px, auto);
             position: absolute;
             top: 30%;
-            right: 50px;
+            left: 50px;
+            border-radius: 5px;
+            overflow: hidden;
         }
 
         .image2 {

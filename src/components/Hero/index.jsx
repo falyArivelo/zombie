@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react'
 import './style.scss'
 import { useIntl } from 'react-intl';
 import { useGSAP } from "@gsap/react";
-import { text_from_bottom, imageVariants, xy, textVariants } from '../../motions/animation';
+import { text_from_bottom, imageVariants, xy, textVariants, popUp } from '../../motions/animation';
 import 'swiper/css';
 
 import scroll_animation from '../../assets/scroll_animation.json'
@@ -66,7 +66,7 @@ const Index = () => {
                 <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/hero_1.jpg"} alt="" />
             </m.div> */}
 
-            <div className='perfect'>
+            {/* <div className='perfect'>
                 <m.span
                     initial={"from_bottom"}
                     animate={"to_top"}
@@ -80,7 +80,7 @@ const Index = () => {
                 >
                     perfect
                 </m.span>
-            </div>
+            </div> */}
 
             <div className="slogan">
                 <m.div className='find'
@@ -91,22 +91,22 @@ const Index = () => {
                         animate="animate"
                         exit="exit"
                         transition={{ duration: 0.8, delay: .2 }}
-                        variants={text_from_bottom}>
-                        find your
+                        variants={popUp}
+                    >
+                        Zombify your
                     </m.span>
                 </m.div>
 
                 <m.div className='match'
                 >
                     <m.span
-
                         initial="initial"
                         animate="animate"
                         exit="exit"
                         transition={{ duration: 0.8, delay: .5 }}
-                        variants={text_from_bottom}
+                        variants={popUp}
                     >
-                        match
+                        Knowledge
                     </m.span>
 
                 </m.div>
@@ -135,7 +135,7 @@ const Index = () => {
                 <span>Trust us with your romantic destiny and let yourself </span>
                 <span>be enchanted by the magic of our process</span>
             </m.div>
-
+            {/* 
             <m.div className="threedee"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -143,7 +143,7 @@ const Index = () => {
                 exit={{ opacity: 0, transition: { delay: 0.1 } }}
             >
                 <ThreeDee />
-            </m.div>
+            </m.div> */}
 
         </div >
     )

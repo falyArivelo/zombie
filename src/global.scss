@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.cdnfonts.com/css/disco-deck');
 @import url('https://fonts.cdnfonts.com/css/captivate');
-
+@import url('https://fonts.cdnfonts.com/css/population-zero-bb');
+@import url('https://fonts.cdnfonts.com/css/halloween-guises');
 // DEVICES
 $desktop: 1024px;
 $tablet: 780px;
@@ -24,18 +25,31 @@ $air-force-blue: #598392ff;
 $ash-gray: #aec3b0ff;
 $beige: #eff6e0ff;
 
+
+$black: #000a0e;
+$violet-1: #4a314d;
+$violet-0: #6b6570;
+$green-0: #a8ba9a;
+$green-1: #ace894;
+
+$blood: #920000;
+
+
+
 // VRAI
-$cursor-color: $midnight-green ;
+$cursor-color: $green-0 ;
 
-$light-bg-color: $beige;
-$light-font-color: $midnight-green ;
-$light-btn-bg: $ash-gray;
-$light-btn-text: $midnight-green;
+$light-bg-color: $green-0;
+$light-font-color: $black ;
+$light-btn-bg: $violet-1;
+$light-btn-text: $green-0;
 
-$dark-bg-color: $rich-black ;
-$dark-font-color: $ash-gray ;
-$dark-btn-bg: $beige ;
-$dark-btn-text: $midnight-green;
+$dark-bg-color: $black ;
+$dark-font-color: $green-0 ;
+$dark-btn-bg: $violet-1 ;
+$dark-btn-text: $green-0;
+
+
 
 
 @mixin phone {
@@ -129,6 +143,16 @@ $dark-btn-text: $midnight-green;
         height: 100%;
         object-fit: cover;
     }
+}
+
+@mixin gradientText($color1, $color2) {
+    background-image: linear-gradient(to right, $color1, $color2);
+    /* Make the background visible only behind the text */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Transparent text to show the gradient */
+    color: transparent;
 }
 
 * {
@@ -229,7 +253,6 @@ body {
     color: #000;
 }
 
-.hoverable{
+.hoverable {
     cursor: pointer;
 }
-

@@ -61,7 +61,7 @@ const Signup = () => {
             >
                 <h1>Sign up</h1>
                 <div className='welcome'>
-                    <h3>Welcome to Oh my boo ! </h3>
+                    <h3>Welcome to Zombix ! </h3>
                     <span className='text'>Be a part of our adventure</span>
                 </div>
                 <Formik

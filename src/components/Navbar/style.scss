@@ -9,6 +9,7 @@
     grid-template-columns: 1fr 50% 1fr;
     z-index: 1000;
     padding: 10px 0;
+    color: $dark-font-color;
 
     .part {
         position: relative;
@@ -34,9 +35,10 @@
         @include flex-center-center;
         gap: 30px;
 
-
         .nav-link {
-            color: black;
+            color: $dark-font-color;
+            font-family: 'Poppins';
+            text-transform: capitalize;
             // border: 1px solid black;
         }
 
@@ -45,6 +47,7 @@
 
     .langue {
         @include flex-center-center;
+
         img {
             width: 23px;
             height: auto;
@@ -65,15 +68,13 @@
     }
 
     .logo {
-        font-family: 'Captivate';
-                                                        
+        font-family: 'Halloween Guises', sans-serif;
+        color: $blood;
         font-weight: 500;
         font-size: 16px;
         width: max-content;
         text-decoration: none;
-        color: white;
 
-        mix-blend-mode: difference;
         text-transform: uppercase;
     }
 
@@ -105,11 +106,10 @@
         width: 480px;
         height: 100vh;
         // border-radius: 10px;
-        background-color: black;
-        color: white;
+        background-color: $dark-btn-bg;
+        color: $dark-btn-text;
         clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
         z-index: -10;
-        mix-blend-mode: difference;
     }
 
     .leftBar {
@@ -137,36 +137,5 @@
         }
     }
 
-    .menu {
-        width: max-content;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .nav-links {
-            display: flex;
-
-            @include phone {
-                display: none;
-            }
-
-            .nav-item {
-                margin: .9em;
-                font-weight: 500;
-                font-size: 1.8vw;
-
-
-                .nav-link {
-                    font-size: 16px;
-                    text-decoration: none;
-                    text-transform: capitalize;
-                    color: black;
-
-                }
-
-            }
-        }
-    }
 
 }

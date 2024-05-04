@@ -278,6 +278,33 @@ export function change_text_color(className, trigger) {
 
 }
 
+export function changeBG(className, trigger, duration) {
+    gsap.to(className, {
+        scrollTrigger: {
+            trigger: trigger,
+            start: "top bottom",
+            end: "bottom 95%",
+            scrub: true,
+            markers: true,
+            onEnter: () => {
+                gsap.to(className, {
+                    color: 'black'
+                })
+            },
+            onLeave: () => {
+                gsap.set(className, {
+                    color: 'white'
+                })
+            }
+        },
+
+        backgroundColor:"white",
+        duration: duration,
+        ease: "power1.inOut"
+    })
+
+}
+
 // ------------FRAMER MOTION
 export const text_from_bottom = {
     initial: { opacity: 0, y: '100%' },
@@ -314,5 +341,12 @@ export const opacity = {
     animate: { opacity: 1 },
     transition: { duration: .3 },
     exit: { opacity: 0, duration: .2 },
+
+}
+
+export const popUp = {
+    initial: { scale: 0, opacity: 0 },// État initial (non visible)
+    animate: { scale: 1, opacity: 1 },// Animation (pop up)
+    exit: { scale: 0, opacity: 0, transition: { duration: 0.2 } },
 
 }
