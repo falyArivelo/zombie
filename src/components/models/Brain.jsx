@@ -7,12 +7,15 @@ import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export function Brain(props) {
-  const { nodes, materials } = useGLTF(process.env.REACT_APP_REPOSITORY+'/models/Brain.glb')
+  const { nodes, materials } = useGLTF(process.env.REACT_APP_REPOSITORY + '/models/Brain.glb')
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.BRAIN.geometry} material={materials['Brain pink']} />
+      <mesh scale={[0.01, 0.01, 0.01]} position={[1, -.4, -0.4]} geometry={nodes.BRAIN.geometry} material={materials['Brain pink']} >
+        {/* <meshStandardMaterial color={"pink"} /> */}
+      </mesh>
+
     </group>
   )
 }
 
-useGLTF.preload(process.env.REACT_APP_REPOSITORY+'/models/Brain.glb')
+useGLTF.preload(process.env.REACT_APP_REPOSITORY + '/models/Brain.glb')
