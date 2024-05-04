@@ -6,7 +6,6 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useSmoothTransform } from "./use-smooth-transform";
 import { Box, Cloud, Clouds, Effects, Environment, Float, MeshDistortMaterial, MeshWobbleMaterial, OrbitControls, Plane, Sky, Stars } from "@react-three/drei";
 import { ShaderMaterial } from "three";
-import { Hand } from "./models/hand";
 import FakeGlowMaterial from "./models/FakeGlowMaterial";
 import GradientSphere from "./Mylamina";
 import * as THREE from 'three'

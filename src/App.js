@@ -59,12 +59,11 @@ function App() {
               <Route path="/home" element={<Home />} className='page' />
               <Route path="/contact" element={<Contact />} className='page' />
               <Route path="/chat" element={<Chat />} className='page' />
-              <Route path="/forum" element={<Forum />} className='page' />
+              <Route path="/forum" element={<Chat />} className='page' />
 
               <Route path="/auth" element={<Login />} className='page' />
               <Route path="/auth/login" element={<Login />} className='page' />
               <Route path="/auth/signup" element={<Signup />} className='page' />
-
 
             </Routes>
           </AnimatePresence>
