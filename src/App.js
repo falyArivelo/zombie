@@ -5,6 +5,7 @@ import About from './pages/about';
 import Contact from './pages/contact';
 import Chat from './components/Chat';
 import Vittou from './components/Vittou';
+import Courses from './components/Courses';
 import Lesson from './components/Lesson';
 
 import { Route, Routes, useLocation } from 'react-router-dom';
@@ -21,6 +22,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Login from './components/Authentification/login';
 import Signup from './components/Authentification/signup';
+import HandDetection from './components/GestureRecognition/HandDetection';
+import { Quiz } from './components/quizz/Quiz';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,13 +65,16 @@ function App() {
               <Route path="/forum" element={<Chat />} className='page' />
 
               <Route path="/vittou" element={<Vittou />} className='page' />
-              <Route path="/courses" element={<Lesson />} className='page' />
-
+              <Route path="/courses" element={<Courses />} className='page' />
 
               <Route path="/auth" element={<Login />} className='page' />
               <Route path="/auth/login" element={<Login />} className='page' />
               <Route path="/auth/signup" element={<Signup />} className='page' />
+              <Route path="/lesson" element={<Lesson />} className='page' />
 
+
+              <Route path="/quizz" element={<Quiz type="20" />} className='page' />
+              
             </Routes>
           </AnimatePresence>
         </div>

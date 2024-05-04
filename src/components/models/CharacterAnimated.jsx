@@ -8,7 +8,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export function CharacterAnimated(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF(rocess.env.REACT_APP_REPOSITORY+'/models/Character Animated.glb')
+  const { nodes, materials, animations } = useGLTF(process.env.REACT_APP_REPOSITORY + '/models/Character Animated.glb')
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
@@ -32,4 +32,4 @@ export function CharacterAnimated(props) {
   )
 }
 
-useGLTF.preload(rocess.env.REACT_APP_REPOSITORY+'/models/Character Animated.glb')
+useGLTF.preload(process.env.REACT_APP_REPOSITORY + '/models/Character Animated.glb')
