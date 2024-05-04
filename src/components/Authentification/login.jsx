@@ -46,12 +46,14 @@ const Login = () => {
     });
     const response = await request.json();
     if (response.status === 200) {
-      localStorage.setItem("token", response.data);
-      window.location.replace("/")
+      console.log('response', JSON.stringify( response))
+    
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("user", response.data.user);
+    //  window.location.replace("/")
     } else {
       alert(response.data)
     }
-    console.log('response', response)
   }
 
   return (
