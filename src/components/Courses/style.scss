@@ -1,0 +1,88 @@
+@import '../../global.scss';
+
+.courses {
+    background-color: $black;
+    width: 100%;
+    min-height: 100vh;
+    max-height: max-content;
+    padding-top: 5rem;
+
+    .category {
+        font-family: 'Poppins';
+        font-size: 30px;
+        @include flex-left-center;
+        color: $dark-font-color;
+        font-weight: 900;
+        padding: 0 20px ;
+    }
+
+    .chapitres {
+        width: 100%;
+        height: max-content;
+        padding: 20px;
+        display: flex;
+        gap: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+
+
+        .chapitre {
+            position: 'relative';
+            width: 300px;
+            height: 350px;
+            background-color: $dark-btn-bg;
+            color: $dark-btn-text;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+
+            .image {
+                width: 100%;
+                height: 70%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: all .5s ease-in-out .1s;
+
+                }
+            }
+
+            .infos {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: $dark-btn-bg;
+                height: 30%;
+                width: 100%;
+                font-family: 'Poppins';
+                padding: 10px;
+                line-height: 0.9;
+
+                .title {
+                    font-size: 30px;
+                }
+
+                .libelle {
+                    font-size: 20px;
+                    display: none;
+                }
+            }
+
+            &:hover {
+                img {
+                    scale: 1.1;
+                }
+            }
+
+        }
+    }
+
+}

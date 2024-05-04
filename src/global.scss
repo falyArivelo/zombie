@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.cdnfonts.com/css/disco-deck');
-@import url('https://fonts.cdnfonts.com/css/captivate');
 @import url('https://fonts.cdnfonts.com/css/population-zero-bb');
 @import url('https://fonts.cdnfonts.com/css/halloween-guises');
 // DEVICES
@@ -33,6 +30,8 @@ $green-0: #a8ba9a;
 $green-1: #ace894;
 
 $blood: #920000;
+$citrouille: #ff7b00;
+
 
 
 
@@ -96,12 +95,25 @@ $dark-btn-text: $green-0;
     align-items: center;
 }
 
+@mixin flex-left-center {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+@mixin flex-left-start {
+    display: flex;
+    justify-content: left;
+    align-items: start;
+}
+
+
 @mixin circle-button {
     background-color: white;
     color: black;
     outline: none;
     border: none;
-    border-radius: 50%;
+    border-radius: 50%!important;
     width: 50px;
     height: 50px;
     @include flex-center-center();

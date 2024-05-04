@@ -136,10 +136,15 @@ const Index = () => {
                 <span>be enchanted by the magic of our process</span>
             </m.div>
 
-            <div className="threedee"
+            <m.div className="threedee"
+                initial={{ opacity: 0 }}
+                animate={{ opacity:  1  }}
+                transition={{ duration: 0.5, delay: 1 }}
+                exit={{ opacity: 0, transition: { delay: .3 } }}
+
             >
                 <ThreeDee />
-            </div>
+            </m.div>
 
         </div >
     )

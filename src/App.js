@@ -4,8 +4,9 @@ import Home from './pages/home';
 import About from './pages/about';
 import Contact from './pages/contact';
 import Chat from './components/Chat';
-import Forum from './components/Forum';
-
+import Vittou from './components/Vittou';
+import Courses from './components/Courses';
+import Lesson from './components/Lesson';
 
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './styles/page_transition.css'
@@ -61,11 +62,16 @@ function App() {
               <Route path="/home" element={<Home />} className='page' />
               <Route path="/contact" element={<Contact />} className='page' />
               <Route path="/chat" element={<Chat />} className='page' />
-              <Route path="/forum" element={<Forum />} className='page' />
+              <Route path="/forum" element={<Chat />} className='page' />
+
+              <Route path="/vittou" element={<Vittou />} className='page' />
+              <Route path="/courses" element={<Courses />} className='page' />
 
               <Route path="/auth" element={<Login />} className='page' />
               <Route path="/auth/login" element={<Login />} className='page' />
               <Route path="/auth/signup" element={<Signup />} className='page' />
+              <Route path="/lesson" element={<Lesson />} className='page' />
+
 
               <Route path="/quizz" element={<Quiz type="20" />} className='page' />
               
