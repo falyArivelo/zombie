@@ -1,0 +1,105 @@
+@import '../../global.scss';
+
+.content {
+    width: 100vw;
+    padding: 1rem;
+    position: relative;
+    background: #ecd7e8;
+
+    .matching {
+        margin-top: 50px;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        position: relative;
+
+        .description {
+            position: absolute;
+            top: 15%;
+            left: 0;
+
+            h1 {
+
+                font-size: 120px;
+                text-transform: uppercase;
+                width: 100%;
+            }
+
+            .paragraphe {
+
+                width: 650px;
+                color: black;
+                display: flex;
+                flex-wrap: wrap;
+                font-size: 20px;
+                // @include border;
+
+            }
+        }
+
+        .image1 {
+            @include image(550px, auto);
+            position: absolute;
+            top: 30%;
+            right: 50px;
+        }
+
+        .image2 {
+            @include image(230px, auto);
+            position: absolute;
+            top: 50%;
+            left: 38%;
+        }
+    }
+
+    .virtual {
+        margin-top: 20px;
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        position: relative;
+
+        .virtual_description {
+            position: absolute;
+            top: 5%;
+            right: 20px;
+
+            h1 {
+
+                font-size: 120px;
+                text-transform: uppercase;
+                width: 100%;
+            }
+
+            .paragraphe {
+
+                width: 650px;
+                color: black;
+                display: flex;
+                justify-content: end;
+                align-items: right;
+                flex-wrap: wrap;
+                font-size: 20px;
+
+            }
+        }
+
+        .image1 {
+            @include image(550px, auto);
+            position: absolute;
+            top: 30%;
+            right: 50px;
+        }
+
+        .image2 {
+            @include image(230px, auto);
+            position: absolute;
+            top: 50%;
+            left: 38%;
+        }
+
+    }
+
+}

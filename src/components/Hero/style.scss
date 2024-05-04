@@ -1,0 +1,137 @@
+@import '../../global.scss';
+
+.hero {
+    max-width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: 200;
+    display: flex;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    // background-color: red;
+    position: relative;
+    background-color: rgb(216, 197, 205);
+
+    .image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(97, 97, 97);
+        width: 350px;
+        height: 500px;
+        // clip-path: polygon(0 5%, 95% 0, 100% 95%, 5% 100%);
+        overflow: hidden;
+        z-index: 100;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .perfect {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        color: white;
+        mix-blend-mode: dark;
+        transform: translate(-50%, -50%);
+        font-size: 130px;
+        overflow: hidden;
+        @include flex-center-center;
+        z-index: 1000;
+        // font-family: 'wanoquin';
+
+        span {
+            transform: rotate(-3deg);
+        }
+    }
+
+    .slogan {
+        width: 100%;
+        padding: 20px 20px;
+        font-size: 200px;
+        color: black;
+        line-height: 0.9;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+
+
+        .find {
+            width: 100%;
+            padding: 10px 50px;
+            word-spacing: 10rem;
+            overflow: hidden;
+            @include flex-center-center;
+            // line-height: 1;
+        }
+
+        .match {
+            padding: 10px 50px;
+            // overflow: hidden;
+            width: 100%;
+            overflow: hidden;
+            @include flex-center-center;
+            line-height: .8;
+        }
+
+        span {
+            transform: translateY(100%);
+        }
+
+    }
+
+
+    .scroll_animation {
+        width: max-content;
+        height: max-content;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        // @include border;
+    }
+
+    .trust {
+        @include absolute-Bottom-Right(10px, 20px, 400px, max-content);
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 15px;
+        color: black;
+        line-height: 1;
+        text-align: right;
+        justify-content: right;
+        align-items: right;
+        font-weight: 500;
+    }
+
+    .hand {
+        // background-color:grey;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        z-index: 100000;
+        width: 100%;
+        height: 100%;
+    }
+
+    .threedee {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // background-color: rgba(125, 201, 27, 0.801);
+        // transform: translateX(-100%);
+    }
+}

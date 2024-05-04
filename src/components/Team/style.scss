@@ -1,0 +1,14 @@
+@import '../../global.scss';
+
+
+.team {
+    @include flex-center-center;
+    flex-wrap: nowrap;
+    gap: 20px;
+
+    .teammate {
+        // background-color: white;
+        width: max-content;
+        // height: 500px
+    }
+}

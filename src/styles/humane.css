@@ -1,0 +1,11 @@
+/* Webfont: Humane-Bold */
+@font-face {
+    font-family: 'humane';
+
+    src: url('../assets/humane/Humane-Bold.woff') format('woff'),
+        url('../assets/humane/Humane-Bold.woff2') format('woff2'),
+        url('../assets/humane/Humane-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
