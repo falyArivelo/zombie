@@ -15,7 +15,7 @@ const glowGreen = new THREE.MeshBasicMaterial({ color: new THREE.Color(0.6, 7, 0
 
 
 export function Hand(props) {
-  const { nodes, materials } = useGLTF('/models/hand.glb')
+  const { nodes, materials } = useGLTF(process.env.REACT_APP_REPOSITORY+'/models/hand.glb')
 
 
   return (
@@ -67,4 +67,4 @@ export function Hand(props) {
   )
 }
 
-useGLTF.preload('/models/hand.glb')
+useGLTF.preload(process.env.REACT_APP_REPOSITORY+'/models/hand.glb')
