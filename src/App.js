@@ -22,7 +22,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Login from './components/Authentification/login';
 import Signup from './components/Authentification/signup';
-import HandDetection from './components/GestureRecognition/HandDetection';
+// import HandDetection from './components/GestureRecognition/HandDetection';
 import { Quiz } from './components/quizz/Quiz';
 
 gsap.registerPlugin(ScrollTrigger);

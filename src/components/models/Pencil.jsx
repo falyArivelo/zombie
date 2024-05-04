@@ -9,7 +9,7 @@ import { useGLTF } from '@react-three/drei'
 export function Pencil(props) {
   const { nodes, materials } = useGLTF(process.env.REACT_APP_REPOSITORY+'/models/Pencil.glb')
   return (
-    <group {...props} dispose={null}>
+    <group scale={[5,5,5]} position={[2.9, -1.2, 2]} rotation={[2,2,1]} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
         <mesh geometry={nodes.Pencil1_1.geometry} material={materials.Ferrule1Pencil1} />
         <mesh geometry={nodes.Pencil1_2.geometry} material={materials.Eraser1Pencil1} />

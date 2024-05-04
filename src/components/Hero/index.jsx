@@ -16,6 +16,7 @@ import { transition } from "../settings";
 import useMeasure from "react-use-measure";
 import "../button.css";
 import GradientSphere from '../Mylamina';
+import { Helmet } from 'react-helmet';
 
 
 const Index = () => {
@@ -56,31 +57,6 @@ const Index = () => {
 
         <div className='hero' >
 
-            {/* <m.div className="image"
-                initial="from_bottom_initial"
-                animate="from_bottom_animate"
-                transition={{ duration: 1, delay: 3.5 }}
-                exit="from_bottom_exit"
-                variants={imageVariants}
-            >
-                <img src={process.env.REACT_APP_REPOSITORY + "/assets/images/hero_1.jpg"} alt="" />
-            </m.div> */}
-
-            {/* <div className='perfect'>
-                <m.span
-                    initial={"from_bottom"}
-                    animate={"to_top"}
-                    exit={"exit_from_bottom"}
-                    variants={textVariants}
-                    transition={{
-                        type: "tween",
-                        ease: "easeOut",
-                        duration: 1, delay: 1.5
-                    }}
-                >
-                    perfect
-                </m.span>
-            </div> */}
 
             <div className="slogan">
                 <m.div className='find'
@@ -138,7 +114,7 @@ const Index = () => {
 
             <m.div className="threedee"
                 initial={{ opacity: 0 }}
-                animate={{ opacity:  1  }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 1 }}
                 exit={{ opacity: 0, transition: { delay: .3 } }}
 
