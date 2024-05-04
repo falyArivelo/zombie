@@ -5,73 +5,11 @@
     width: 100%;
     min-height: 100vh;
     max-height: max-content;
+    padding: 20px;
     padding-top: 5rem;
 
-    .chapitres {
-        width: 100%;
-        height: max-content;
-        padding: 20px;
-        display: flex;
-        gap: 10px;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        .chapitre {
-            position: 'relative';
-            width: 300px;
-            height: 350px;
-            background-color: $dark-btn-bg;
-            color: $dark-btn-text;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            border-radius: 5px;
-            overflow: hidden;
-
-            .image {
-                width: 100%;
-                height: 70%;
-                position: absolute;
-                top: 0;
-                left: 0;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    transition: all .5s ease-in-out .1s ;
-
-                }
-            }
-
-            .infos {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                background-color: $dark-btn-bg;
-                height: 30%;
-                width: 100%;
-                font-family: 'Poppins';
-                padding: 10px;
-                line-height: 0.9;
-
-                .title {
-                    font-size: 30px;
-                }
-
-                .libelle {
-                    font-size: 20px;
-                    display: none;
-                }
-            }
-
-            &:hover {
-                img {
-                    scale: 1.1;
-                }
-            }
-
-        }
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
 }
