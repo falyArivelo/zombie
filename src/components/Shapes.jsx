@@ -4,41 +4,44 @@ import { useRef, useLayoutEffect } from "react";
 import { transition } from "./settings";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useSmoothTransform } from "./use-smooth-transform";
-import { Box, Cloud, Clouds, Effects, Environment, MeshDistortMaterial, MeshWobbleMaterial, OrbitControls, Plane, Sky, Stars } from "@react-three/drei";
+import { Box, Cloud, Clouds, Effects, Environment, Float, MeshDistortMaterial, MeshWobbleMaterial, OrbitControls, Plane, Sky, Stars } from "@react-three/drei";
 import { ShaderMaterial } from "three";
 import { Hand } from "./models/hand";
 import FakeGlowMaterial from "./models/FakeGlowMaterial";
 import GradientSphere from "./Mylamina";
 import * as THREE from 'three'
+import { Brain } from "./models/Brain";
+import { ZombieMini } from "./models/ZombieMini";
+
 
 
 export function ThreeDee(props) {
   return (
     <Canvas shadows dpr={[1, 2]} resize={{ scroll: false, offsetSize: true }}>
-      <Environment  preset="sunset" />
-      {/* <Environment background={new THREE.Color('red ')} /> */}
+      <Environment preset="sunset" />
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
-      <Hand />
-      <Sky distance={50000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25} {...props} />
-      <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade />
-      {/* <GradientSphere /> */}
-      {/* <Cloud
-        opacity={1}
-        speed={0.1} // Rotation speed
-        width={1} // Width of the full cloud
-        depth={.1} // Z-dir depth
-        segments={1} // Number of particles
-        color={"#FFFEF2"}
-        position={[-18, 11.5, -12]}
-      /> */}
 
-      <Clouds material={THREE.MeshBasicMaterial}>
-        <Cloud seed={10} bounds={50} volume={80} position={[40, 0, -80]} color={"#FFE4F3"} />
-        <Cloud seed={10} bounds={50} volume={80} position={[-40, 10, -80]} color={"#FDFFDD"} />
-      </Clouds>
+      <Float
+        speed={1} // Animation speed, defaults to 1
+        rotationIntensity={0.9} // XYZ rotation intensity, defaults to 1
+        floatIntensity={0.9} // Up/down float intensity, defaults to 1
+      >
+        <Brain position={[0, 0, 0]} />
+      </Float>
 
-    </Canvas>
+
+      <Float
+        speed={1} // Animation speed, defaults to 1
+        rotationIntensity={0.9} // XYZ rotation intensity, defaults to 1
+        floatIntensity={0.9} // Up/down float intensity, defaults to 1
+      >
+        <ZombieMini position={[-5, -3, 0]}
+          rotation={[0, 2, -0.3]}
+        />
+      </Float>
+
+    </Canvas >
   );
 }
 
