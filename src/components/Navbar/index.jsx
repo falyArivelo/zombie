@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Button from '../Button';
 import Leftbar from '../Leftbar';
@@ -13,6 +13,7 @@ import { ThemeContext } from '../../App';
 import { CgMenuRight } from "react-icons/cg";
 import { showSideMenu } from '../../motions/animation';
 import { motion as m } from 'framer-motion'
+import { Helmet } from 'react-helmet';
 
 const menu = {
   open: {
@@ -39,6 +40,21 @@ const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
+  const [token, setToken] = useState(null);
+  const [username, setUsername] = useState(null);
+
+
+  useEffect(() => {
+    // Vérifie si le token existe dans localStorage au chargement initial du composant
+    const tokenFromLocalStorage = localStorage.getItem('token');
+    const userDataString = localStorage.getItem('user');
+    const userData = JSON.parse(userDataString);
+
+    if (tokenFromLocalStorage) {
+      setToken(tokenFromLocalStorage);
+      setUsername(userData.firstName)
+    }
+  }, []);
 
   const toggleSideMenu = () => {
     setIsOpen(!isOpen);
@@ -96,18 +112,30 @@ const Navbar = () => {
           <Link className='nav-link hoverable' to='/home'>home</Link>
           <Link className='nav-link hoverable' to='/about'>about us</Link>
           <Link className='nav-link hoverable' to='/forum'>Forum</Link>
-          <Link className='nav-link hoverable' to='/auth'>Sign in</Link>
+
+          {token ? (
+            <div>{username}</div>
+          ) : (
+
+            <Link className='nav-link hoverable' to='/auth'>
+              Sign in
+            </Link>
+          )}
+
 
         </div>
       </div>
 
-
-
       <div className="part">
-        <div className="langue" onClick={toggleLangue}>
-          {/* {isDarkMode ? <ImSun size={20} color='black' /> : <BiSolidMoon size={20} color='black' />} */}
+
+        <Helmet>
+          <script src="https://cdn.jsdelivr.net/gh/cnumr/ecoindex_badge@3/assets/js/ecoindex-badge.js" defer />
+        </Helmet>
+        <div id="ecoindex-badge" data-theme="dark"></div>
+
+        {/* <div className="langue" onClick={toggleLangue}>
           <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="" />
-        </div>
+        </div> */}
         <div className="icon" onClick={toggleIcon}>
           {isDarkMode ? <ImSun size={20} color='black' /> : <BiSolidMoon size={20} color='white' />}
         </div>

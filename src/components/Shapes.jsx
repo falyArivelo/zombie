@@ -1,19 +1,10 @@
-import { motion } from "framer-motion-3d";
-import { MotionConfig } from "framer-motion";
-import { useRef, useLayoutEffect } from "react";
-import { transition } from "./settings";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useSmoothTransform } from "./use-smooth-transform";
 import { Box, Cloud, Clouds, Effects, Environment, Float, MeshDistortMaterial, MeshWobbleMaterial, OrbitControls, Plane, Sky, Stars } from "@react-three/drei";
-import { ShaderMaterial } from "three";
-import FakeGlowMaterial from "./models/FakeGlowMaterial";
-import GradientSphere from "./Mylamina";
 import * as THREE from 'three'
 import { Brain } from "./models/Brain";
 import { ZombieMini } from "./models/ZombieMini";
 import { Pencil } from "./models/Pencil";
 import { Book } from "./models/Book";
-import { CharacterAnimated } from "./models/CharacterAnimated";
 
 
 
@@ -54,9 +45,8 @@ export function ThreeDee(props) {
           seed={10} bounds={50} volume={80} position={[0, 0, 0]} color={"white"} />
       </Clouds>
 
-      <Book />
+      {/* <Book /> */}
       <Pencil />
-      <CharacterAnimated />
 
     </Canvas >
   );

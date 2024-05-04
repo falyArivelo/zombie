@@ -214,6 +214,10 @@ export function clipPath_bottom_top(className, y, x, duration) {
 
 
 export function clipPath_bottom_top_Trigger(className, trigger, y, x, duration) {
+    gsap.set(className, {
+        clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+    })
+    
     gsap.to(className, {
         duration: 3,
         scrollTrigger: {

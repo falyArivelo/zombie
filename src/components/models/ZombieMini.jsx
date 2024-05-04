@@ -11,7 +11,6 @@ export function ZombieMini(props) {
   const { nodes, materials, animations } = useGLTF(process.env.REACT_APP_REPOSITORY + '/models/ZombieMini.glb')
   const { actions } = useAnimations(animations, group)
 
-  console.log(actions);
 
   const [animation, setAnimation] = useState("CharacterArmature|Wave");
 

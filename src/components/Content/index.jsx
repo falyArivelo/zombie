@@ -11,10 +11,9 @@ import { xy, clipPath_bottom_top_Trigger, clipPath_bottom_top, changeBG } from '
 const Index = () => {
 
     useGSAP(() => {
+        xy(".learning .description", ".learning", -200, 0, 5, '90%')
+        xy(".forum .forum_description", ".forum", -200, 0, 5, '90%')
 
-        // xy(".matching .description", '.matching', -100, 0, 5)
-        // changeBG(".matching", ".matching", 6)
-        clipPath_bottom_top(".matching .image1", -30, 0, 1)
     }, []);
 
     return (
