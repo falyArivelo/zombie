@@ -52,7 +52,7 @@
         input[type="text"] {
           position: absolute;
           top: 0;
-          left: 80px;
+          left: 10px;
           width: 105%;
           height: 105%;
           padding: 20px;
@@ -205,8 +205,9 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            width: 13%;
+            width: 25%;
             align-items: center;
+            margin-bottom: 10px;
           }
           .user{
             font-size: small;
