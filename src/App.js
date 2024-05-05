@@ -22,8 +22,13 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import Login from './components/Authentification/login';
 import Signup from './components/Authentification/signup';
+import ListChapters from './components/chapitre/ListChapitres';
+import ChapterDetailS from './components/chapitre/DetailsChapters';
+import ChapterDetailsDetails from './components/chapitre/DetailsDetailsChapitre';
+import QuizzPage from './components/quizz/QuizzPage';
+
 // import HandDetection from './components/GestureRecognition/HandDetection';
-import { Quiz } from './components/quizz/Quiz';
+// import { Quiz } from './components/quizz/Quiz';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -48,16 +53,19 @@ function App() {
     // document.body.classList.toggle('theme-light', theme === 'dark');
   }
 
+
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <IntlProvider locale='en' messages={messages['en']} >
         <div className='App' id={theme}>
           <Cursor />
-          <Navbar />
-          {/* {!location.pathname.startsWith('/auth') && <Navbar />} */}
+          {/* <Navbar /> */}
+          {!location.pathname.startsWith('/auth') && <Navbar />}
+
           <AnimatePresence mode='wait'>
             <Routes location={location} key={location.pathname}>
-              <Route index element={<Home />} className='page' />
+              <Route path='/' element={<Home />} className='page' />
               <Route path="/about" element={<About />} className='page' />
               <Route path="/home" element={<Home />} className='page' />
               <Route path="/contact" element={<Contact />} className='page' />
@@ -72,9 +80,14 @@ function App() {
               <Route path="/auth/signup" element={<Signup />} className='page' />
               <Route path="/lesson" element={<Lesson />} className='page' />
 
+              <Route path="/chapters" element={<ListChapters />} className='page' />
 
-              <Route path="/quizz" element={<Quiz type="20" />} className='page' />
-              
+              <Route path="/chapter-details/:chapterId" element={<ChapterDetailS />} />
+              <Route path="/chapter-details-details/:chapterId/:detailsChapitreId" element={<ChapterDetailsDetails />} />
+              <Route path="/quiz-page/:chapterId" element={<QuizzPage />} />
+
+              {/* <Route path="/quizz" element={<Quiz type="20" />} className='page' /> */}
+
             </Routes>
           </AnimatePresence>
         </div>
