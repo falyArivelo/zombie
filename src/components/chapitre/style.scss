@@ -1,0 +1,72 @@
+@import '../../global.scss';
+
+.detailsChapter,
+.sousChapter {
+    background-color: $black;
+    width: 100%;
+    min-height: 100vh;
+    max-height: max-content;
+    padding: 20px 50px;
+    padding-top: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: 'Poppins';
+
+    color: $green-0;
+
+
+    font-family: 'Poppins';
+
+    .entete {
+        // color: white;
+        font-family: 'Poppins';
+        font-size: 5rem;
+        font-weight: bold;
+    }
+
+    .paragraphe {
+        // color: white;
+        font-size: 1rem;
+        padding: 10px;
+        width: 60%;
+    }
+
+    .images {
+        @include flex-left-center;
+        gap: 10px;
+
+        .image {
+            @include image(200px, auto);
+        }
+    }
+
+    .videos {}
+
+    .title {
+        font-size: 25px;
+    }
+
+    .paragraphes {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .view {
+        background-color: $dark-btn-bg;
+        color: $dark-btn-text;
+        padding: 10px 30px;
+        border-radius: 10px;
+        font-size: 13px;
+        width: max-content;
+        @include flex-center-center
+    }
+
+    .validated{
+
+    }
+
+}
+

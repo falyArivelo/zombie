@@ -8,8 +8,8 @@ import { Link, useLocation } from 'react-router-dom';
 const Login = () => {
   const location = useLocation();
   const initialValues = {
-    email: '',
-    password: ''
+    email: 'fabien@gmail.com',
+    password: 'fabien le magnifique'
   };
 
   const validationSchema = Yup.object({
@@ -92,8 +92,8 @@ const Login = () => {
         </div>
 
         <form className='login_form' onSubmit={handleSubmit}>
-          <input type="text" value="fabien@gmail.com" placeholder='email' />
-          <input type="paswword" value="fabien le magnifique" placeholder='password' />
+          <input type="text"  placeholder='email' />
+          <input type="paswword" placeholder='password' />
 
           <button className='login-button' type='submit'>log in</button>
           <div className='forget-pwd'>Forget password ?</div>

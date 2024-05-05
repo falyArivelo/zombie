@@ -101,10 +101,11 @@
             // padding: 50px;
             width: 200px;
             height: 200px;
-
             background-color: black;
             color: $dark-font-color;
             font-size: 25px;
+            font-family: 'Poppins';
+            transform: rotate(645deg);
             @include flex-center-center;
 
         }

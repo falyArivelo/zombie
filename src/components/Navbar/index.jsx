@@ -98,7 +98,7 @@ const Navbar = () => {
     <m.div className='nav'
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 2.5 }}>
+      transition={{ duration: 1, delay: 2 }}>
       <div className="part">
         <Link to='/'>
           <div className="logo">
@@ -112,6 +112,8 @@ const Navbar = () => {
           <Link className='nav-link hoverable' to='/home'>home</Link>
           <Link className='nav-link hoverable' to='/about'>about us</Link>
           <Link className='nav-link hoverable' to='/forum'>Forum</Link>
+          <Link className='nav-link hoverable' to='/courses'>Learning</Link>
+
 
 
 
@@ -136,7 +138,7 @@ const Navbar = () => {
         <div className="sidemenu_elements">
 
           {token ? (
-            <div>{username}</div>
+            <div className='username'>{username}</div>
           ) : (
 
             <Link className='nav-link hoverable' to='/auth'>

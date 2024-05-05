@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useState } from 'react'
 import './style.scss'
 import { useIntl } from 'react-intl';
 import { useGSAP } from "@gsap/react";
-import { text_from_bottom, imageVariants, xy, textVariants, popUp } from '../../motions/animation';
+import { xy, popUp } from '../../motions/animation';
 import 'swiper/css';
 
 import scroll_animation from '../../assets/scroll_animation.json'
@@ -11,12 +11,11 @@ import { useInView } from 'react-intersection-observer';
 import { motion as m } from 'framer-motion'
 
 import { motion, MotionConfig, useMotionValue } from "framer-motion";
-import { Shapes, ThreeDee } from "../Shapes";
+import { ThreeDee } from "../Shapes";
 import { transition } from "../settings";
 import useMeasure from "react-use-measure";
 import "../button.css";
-import GradientSphere from '../Mylamina';
-import { Helmet } from 'react-helmet';
+import { Link } from 'react-router-dom';
 
 
 const Index = () => {
@@ -56,10 +55,14 @@ const Index = () => {
 
         <div className='hero' >
 
+            <Link to='/vittou'>
+                <div className="ask_vittou">
+                    ask VITTOU
 
+                </div>
+            </Link>
             <div className="slogan">
                 <m.div className='find'
-
                 >
                     <m.span
                         initial="initial"
@@ -118,11 +121,11 @@ const Index = () => {
                 exit={{ opacity: 0, transition: { delay: .3 } }}
 
             >
-                <ThreeDee />
+                <Suspense fallback={null}>
+                    <ThreeDee />
+                </Suspense>
             </m.div>
-            <div className="ask_vittou">
-                ask VITTOU
-            </div>
+
 
 
         </div >

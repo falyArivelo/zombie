@@ -25,7 +25,7 @@ $beige: #eff6e0ff;
 
 $black: #000a0e;
 $violet-1: #4a314d;
-$violet-0: #6b6570; 
+$violet-0: #6b6570;
 $green-0: #a8ba9a;
 $green-1: #ace894;
 
@@ -113,7 +113,7 @@ $dark-btn-text: $green-0;
     color: black;
     outline: none;
     border: none;
-    border-radius: 50%!important;
+    border-radius: 50% !important;
     width: 50px;
     height: 50px;
     @include flex-center-center();
@@ -179,7 +179,8 @@ $dark-btn-text: $green-0;
 body {
     overscroll-behavior: none;
     overflow-x: hidden;
-    background-image: linear-gradient(60deg, rgb(247, 243, 235), rgb(245, 241, 231));
+    background-color: $black;
+    // background-image: linear-gradient(60deg, rgb(247, 243, 235), rgb(245, 241, 231));
 }
 
 
@@ -267,4 +268,9 @@ body {
 
 .hoverable {
     cursor: pointer;
+}
+
+.hand-loading{
+    width: 30%;
+    height: auto;
 }
